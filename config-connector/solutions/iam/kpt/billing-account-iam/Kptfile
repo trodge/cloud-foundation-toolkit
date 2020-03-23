@@ -1,0 +1,6 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: billing-account-iam
+packageMetadata:
+  shortDescription: Configure permissions for your billing account.
