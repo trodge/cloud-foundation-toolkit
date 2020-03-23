@@ -4,3 +4,36 @@ metadata:
   name: billing-account-iam
 packageMetadata:
   shortDescription: Configure permissions for your billing account.
+openAPI:
+  definitions:
+    io.k8s.cli.setters.project-id:
+      description: ID of project
+      x-k8s-cli:
+        setter:
+          name: project-id
+          value: ${PROJECT_ID?}
+          setBy: PLACEHOLDER
+    io.k8s.cli.setters.service-account-name:
+      description: name of service account
+      x-k8s-cli:
+        setter:
+          name: service-account-name
+          value: billing-account-iam-service-account
+          setBy: package-default
+    io.k8s.cli.substitutions.iam-name-sub:
+      x-k8s-cli:
+        substitution:
+          name: iam-name-sub
+          pattern: serviceAccount:SERVICE_ACCOUNT_NAME_SETTER@PROJECT_ID_SETTER.iam.gserviceaccount.com
+          values:
+          - marker: SERVICE_ACCOUNT_NAME_SETTER
+            ref: '#/definitions/io.k8s.cli.setters.service-account-name'
+          - marker: PROJECT_ID_SETTER
+            ref: '#/definitions/io.k8s.cli.setters.project-id'
+    io.k8s.cli.setters.billing-account:
+      description: ID of billing account
+      x-k8s-cli:
+        setter:
+          name: billing-account
+          value: ${BILLING_ACCOUNT_ID?}
+          setBy: PLACEHOLDER

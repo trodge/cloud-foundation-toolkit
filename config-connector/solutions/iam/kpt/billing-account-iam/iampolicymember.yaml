@@ -21,4 +21,4 @@ spec:
   role: roles/billing.admin
   billingAccountRef:
     # Replace "${BILLING_ACCOUNT_ID?}" with the numeric ID for your billing account
-    external: "${BILLING_ACCOUNT_ID?}"
+    external: "${BILLING_ACCOUNT_ID?}" # {"$ref":"#/definitions/io.k8s.cli.setters.billing-account"}
