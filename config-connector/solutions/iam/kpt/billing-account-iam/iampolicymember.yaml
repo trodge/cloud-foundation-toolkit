@@ -16,9 +16,9 @@ kind: IAMPolicyMember
 metadata:
   name: billing-account-iam-member
 spec:
-  # Replace the ${PROJECT_ID?} below with your desired project ID.
-  member: serviceAccount:billing-account-iam-service-account@${PROJECT_ID?}.iam.gserviceaccount.com
-  role: roles/billing.admin
+  # Replace the ${IAM_NAME?} below with the IAM Member to grant privileges to.
+  member: ${IAM_NAME?} # {"$ref":"#/definitions/io.k8s.cli.setters.iam-name"}
+  role: roles/billing.viewer # {"$ref":"#/definitions/io.k8s.cli.substitutions.role-sub"}
   billingAccountRef:
     # Replace "${BILLING_ACCOUNT_ID?}" with the numeric ID for your billing account
     external: "${BILLING_ACCOUNT_ID?}" # {"$ref":"#/definitions/io.k8s.cli.setters.billing-account"}
