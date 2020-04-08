@@ -27,6 +27,14 @@ Owned Project
   - roles/iam.securityAdmin
 
 # USAGE
+## SETTERS
+|      NAME       |         VALUE          |   SET BY    |          DESCRIPTION           | COUNT |
+|-----------------|------------------------|-------------|--------------------------------|-------|
+| billing-account | ${BILLING_ACCOUNT_ID?} | PLACEHOLDER | ID of project billing account  | 1     |
+| folder-id       | ${FOLDER_ID?}          | PLACEHOLDER | numeric GCP ID of folder       | 1     |
+| iam-member      | ${IAM_MEMBER?}         | PLACEHOLDER | IAM name of service account to | 1     |
+|                 |                        |             | give owner permission          |       |
+| project-id      | ${PROJECT_ID?}         | PLACEHOLDER | ID of project                  | 3     |
 
   Replace the
   `${BILLING_ACCOUNT_ID?}` value.
