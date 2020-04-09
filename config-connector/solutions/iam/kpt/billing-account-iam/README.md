@@ -17,16 +17,13 @@ billing-account-iam
   kpt pkg get $SRC/config-connector/solutions/iam/kpt/billing-account-iam billing-account-iam
   ```
 
+# SETTERS
+|      NAME       |         VALUE          |     SET BY      |       DESCRIPTION        | COUNT |
+|-----------------|------------------------|-----------------|--------------------------|-------|
+| billing-account | ${BILLING_ACCOUNT_ID?} | PLACEHOLDER     | ID of billing account    | 1     |
+| billing-role    | viewer                 | package-default | role to assign           | 1     |
+| iam-name        | ${IAM_NAME?}           | PLACEHOLDER     | IAM member to grant role | 1     |
 # USAGE
-  Set the billing account, the IAM member to assign the role to, and,
-optionally, the [billing
-role](https://cloud.google.com/iam/docs/understanding-roles#billing-roles)
-(defaults to viewer) to assign:
-  ```
-  kpt cfg set . billing-account VALUE
-  kpt cfg set . iam-name VALUE
-  kpt cfg set . billing-role admin
-  ```
 
   Once your configuration is correct, apply it:
   ```
