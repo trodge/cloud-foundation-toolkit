@@ -4,3 +4,12 @@ metadata:
   name: secondary-ranges
 packageMetadata:
   shortDescription: configures a simple VPC
+openAPI:
+  definitions:
+    io.k8s.cli.setters.network-name:
+      description: name of network
+      x-k8s-cli:
+        setter:
+          name: network-name
+          value: secondary-ranges-network
+          setBy: package-default
