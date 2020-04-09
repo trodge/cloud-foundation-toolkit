@@ -23,12 +23,14 @@ Simple Project
   
   The cnrm-system service account must have `roles/resourcemanager.projectCreator` in your organization and `roles/billing.user` for your billing account.
   
+# SETTERS
+|      NAME       |         VALUE          |     SET BY      |          DESCRIPTION           | COUNT |
+|-----------------|------------------------|-----------------|--------------------------------|-------|
+| billing-account | ${BILLING_ACCOUNT_ID?} | PLACEHOLDER     | ID of billing account          | 1     |
+| org-id          | ${ORG_ID?}             | PLACEHOLDER     | organization ID for associated | 1     |
+|                 |                        |                 | services                       |       |
+| project-id      | simple-project         | package-default | ID of project                  | 2     |
 # USAGE
-  In order to use, replace the `${BILLING_ACCOUNT_ID?}` and `${ORG_ID?}` values with your billing account and organization id. You can do this with kpt setters:
-  ```
-  kpt cfg set . billing-account VALUE 
-  kpt cfg set . org-id VALUE 
-  ```
 
   To set the project ID:
   ```
