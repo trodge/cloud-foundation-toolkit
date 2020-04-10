@@ -1,0 +1,7 @@
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeNetwork
+metadata:
+  name: simple-vpc-network # {"$ref":"#/definitions/io.k8s.cli.setters.network-name"}
+spec:
+  routingMode: GLOBAL 
+  autoCreateSubnetworks: false

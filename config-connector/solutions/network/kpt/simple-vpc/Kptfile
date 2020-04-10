@@ -1,0 +1,15 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: simple-vpc
+packageMetadata:
+  shortDescription: configure a simple VPC
+openAPI:
+  definitions:
+    io.k8s.cli.setters.network-name:
+      description: name of network
+      x-k8s-cli:
+        setter:
+          name: network-name
+          value: simple-vpc-network
+          setBy: package-default
