@@ -10,6 +10,8 @@ Project IAM
   ```
   kpt pkg get https://github.com/GoogleCloudPlatform/cloud-foundation-toolkit.git/config-connector/solutions/iam/kpt/project-iam project-iam
   ```
+# REQUIREMENTS
+  A Config Connector installation in a project with Cloud Resource Manager API enabled.
 # SETTERS
 |    NAME    |        VALUE         |     SET BY      |       DESCRIPTION        | COUNT |
 |------------|----------------------|-----------------|--------------------------|-------|
